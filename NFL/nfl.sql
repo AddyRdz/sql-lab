@@ -51,9 +51,14 @@ SELECT avg(salary) FROM players
 WHERE position = 'DE';
 
 -- 12. The names of all the players on the Buffalo Bills
-
+SELECT players.name, teams.name
+FROM players, teams
+WHERE players.team_id=teams.id AND teams.name LIKE 'Buffalo Bills';
 
 -- 13. The total salary of all players on the New York Giants
-
-
+SELECT players.name, teams.name, salaries.values
+FROM players, teams
+WHERE teams.name Like 'New York Giants';
+-- Something with sum potentially?
 -- 14. The player with the lowest salary on the Green Bay Packers
+SELECT
